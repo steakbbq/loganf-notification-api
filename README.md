@@ -18,4 +18,4 @@ npm install
 node server.js
 ```
 
-4. Using postman POST to http://localhost:8080/api/notifications/generate to generate dummy notifications
+4. Using postman GET to http://localhost:8080/api/notifications/generate to generate dummy notifications
