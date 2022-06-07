@@ -3,9 +3,9 @@ module.exports = (mongoose) => {
     "notification",
     mongoose.Schema(
       {
-        type: String,
         title: String,
         content: String,
+        displayAfter: Date,
         deletedAt: Date,
       },
       { timestamps: true }
