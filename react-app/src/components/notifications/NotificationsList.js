@@ -8,13 +8,17 @@ const ExpensesFilter = (props) => {
         <div className="col-md-12">
           <h1>Notifications</h1>
           <div>
-            {props.notifications.map((notification) => (
-              <Notification
-                key={notification.id}
-                title={notification.title}
-                content={notification.content}
-              />
-            ))}
+            {!props.notifications.length ? (
+              <p>No Notifications Found</p>
+            ) : (
+              props.notifications.map((notification) => (
+                <Notification
+                  key={notification.id}
+                  title={notification.title}
+                  content={notification.content}
+                />
+              ))
+            )}
           </div>
         </div>
       </div>
