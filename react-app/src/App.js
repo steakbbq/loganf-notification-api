@@ -8,15 +8,15 @@ function App() {
   //get list of notifications with axios
   const [notifications, setNotifications] = useState([]);
 
-  NotificationDataService.getAll()
-    .then((response) => {
-      setNotifications(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-
-  console.log(notifications);
+  if (notifications.length === 0) {
+    NotificationDataService.getAll()
+      .then((response) => {
+        setNotifications(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   return (
     <div>

@@ -10,11 +10,9 @@ const ExpensesFilter = (props) => {
           <div>
             {props.notifications.map((notification) => (
               <Notification
+                key={notification.id}
                 title={notification.title}
                 content={notification.content}
-                displayAfter={notification.displayAfter}
-                created_at={notification.created_at}
-                updated_at={notification.updated_at}
               />
             ))}
           </div>
