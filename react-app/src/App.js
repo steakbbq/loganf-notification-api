@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NotificationDataService from "./components/services/NotificationDataService";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
@@ -8,7 +8,7 @@ function App() {
   //get list of notifications with axios
   const [notifications, setNotifications] = useState([]);
 
-  if (notifications.length === 0) {
+  useEffect(() => {
     NotificationDataService.getAll()
       .then((response) => {
         setNotifications(response.data);
@@ -16,7 +16,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }
+  }, []);
 
   return (
     <div>
