@@ -1,6 +1,6 @@
 import httpCommon from "../../http-common";
 class NotificationDataService {
-  getAll() {
+  async getAll() {
     return httpCommon.get("/notifications");
   }
 }
